@@ -21,6 +21,6 @@ SJMotionOrientationManager.shared.startAccelerometerUpdates(deviceBlock: { (devi
 You will get device orientation and interface orientation using block.
 
 
-Run below line for stop motion manager
+**Run below line for stop motion manager**
 
-SJMotionOrientationManager.shared.stopAccelerometerUpdates()
+```SJMotionOrientationManager.shared.stopAccelerometerUpdates()```
