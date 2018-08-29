@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MotionOrientationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Orientation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWj-eg-8RL">
+                                <rect key="frame" x="15" y="45" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ien-a1-WNM">
+                                <rect key="frame" x="15" y="71" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motion Orientation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-eP-dpH">
+                                <rect key="frame" x="15" y="122" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9T-So-drh">
+                                <rect key="frame" x="15" y="148" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ecc-eP-dpH" secondAttribute="trailing" constant="15" id="5z9-tA-bAL"/>
+                            <constraint firstItem="ien-a1-WNM" firstAttribute="trailing" secondItem="gWj-eg-8RL" secondAttribute="trailing" id="DC8-Q1-A0f"/>
+                            <constraint firstItem="Ecc-eP-dpH" firstAttribute="top" secondItem="ien-a1-WNM" secondAttribute="bottom" constant="30" id="FiO-1b-Hz0"/>
+                            <constraint firstItem="ien-a1-WNM" firstAttribute="top" secondItem="gWj-eg-8RL" secondAttribute="bottom" constant="5" id="KjE-cY-ALr"/>
+                            <constraint firstItem="P9T-So-drh" firstAttribute="trailing" secondItem="Ecc-eP-dpH" secondAttribute="trailing" id="NfY-69-7EO"/>
+                            <constraint firstItem="P9T-So-drh" firstAttribute="top" secondItem="Ecc-eP-dpH" secondAttribute="bottom" constant="5" id="d8v-7l-r2w"/>
+                            <constraint firstItem="gWj-eg-8RL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="hGs-wp-HIs"/>
+                            <constraint firstItem="ien-a1-WNM" firstAttribute="leading" secondItem="gWj-eg-8RL" secondAttribute="leading" id="hMt-yS-14t"/>
+                            <constraint firstItem="Ecc-eP-dpH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="kKy-Uw-XcY"/>
+                            <constraint firstItem="P9T-So-drh" firstAttribute="leading" secondItem="Ecc-eP-dpH" secondAttribute="leading" id="lZ0-nB-AxE"/>
+                            <constraint firstItem="gWj-eg-8RL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="wHv-r6-sKG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gWj-eg-8RL" secondAttribute="trailing" constant="15" id="xs2-vF-JKA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblDeviceOrientation" destination="ien-a1-WNM" id="rAS-pz-Q8O"/>
+                        <outlet property="lblMotionOrientation" destination="P9T-So-drh" id="K2k-3l-z7B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
