@@ -11,7 +11,7 @@ The notify the orientation of iOS device changed, using CoreMotion for even taki
 Run below line for Start motion manager
 
 ```
-SJMotionOrientationManager.shared.startAccelerometerUpdates(deviceBlock: { (deviceOrientation) in
+YZMotionOrientationManager.shared.startAccelerometerUpdates(deviceBlock: { (deviceOrientation) in
 // code 
 }) { (interfacOrientation) in
 // code 
@@ -23,4 +23,4 @@ You will get device orientation and interface orientation using block.
 
 **Run below line for stop motion manager**
 
-```SJMotionOrientationManager.shared.stopAccelerometerUpdates()```
+```YZMotionOrientationManager.shared.stopAccelerometerUpdates()```
