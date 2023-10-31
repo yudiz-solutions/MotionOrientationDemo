@@ -1,5 +1,5 @@
 //
-//  SJMotionOrientationManager.swift
+//  YZMotionOrientationManager.swift
 //  MotionOrientationDemo
 //
 //  Created by Yudiz Solutions on 29/08/18.
@@ -11,11 +11,11 @@ import Foundation
 import UIKit
 import CoreMotion
 
-typealias SJDeviceOrientationHandler = (UIDeviceOrientation) -> Swift.Void
-typealias SJInterfaceOrientationHandler = (UIInterfaceOrientation) -> Swift.Void
+typealias YZDeviceOrientationHandler = (UIDeviceOrientation) -> Swift.Void
+typealias YZInterfaceOrientationHandler = (UIInterfaceOrientation) -> Swift.Void
 
-class SJMotionOrientationManager: NSObject{
-    static let shared =  SJMotionOrientationManager()
+class YZMotionOrientationManager: NSObject{
+    static let shared =  YZMotionOrientationManager()
     
     // MARK: - Variables
     var motionManager: CMMotionManager = {
@@ -32,8 +32,8 @@ class SJMotionOrientationManager: NSObject{
     var interfaceOrientation: UIInterfaceOrientation = .portrait
     var deviceOrientation: UIDeviceOrientation = .portrait
     
-    var deviceOrientationBlock: SJDeviceOrientationHandler?
-    var interfaceOrientationBlock: SJInterfaceOrientationHandler?
+    var deviceOrientationBlock: YZDeviceOrientationHandler?
+    var interfaceOrientationBlock: YZInterfaceOrientationHandler?
     
     var affineTransform: CGAffineTransform {
         var rotationDegree: CGFloat = 0
@@ -62,7 +62,7 @@ class SJMotionOrientationManager: NSObject{
         super.init()
     }
     
-    func startAccelerometerUpdates(deviceBlock: SJDeviceOrientationHandler? = nil, interfaceBlock: SJInterfaceOrientationHandler? = nil){
+    func startAccelerometerUpdates(deviceBlock: YZDeviceOrientationHandler? = nil, interfaceBlock: YZInterfaceOrientationHandler? = nil){
         self.deviceOrientationBlock = deviceBlock
         self.interfaceOrientationBlock = interfaceBlock
         // Simulator
@@ -70,7 +70,7 @@ class SJMotionOrientationManager: NSObject{
         self.prepareForSimulator()
         #endif
         if (!self.motionManager.isAccelerometerAvailable) {
-            print("SJMotionOrientationManager - Accelerometer is NOT available");
+            print("YZMotionOrientationManager - Accelerometer is NOT available");
             return;
         }
         self.motionManager.startAccelerometerUpdates(to: self.operationQueue) { [weak self] (accelerometerData, error) in
@@ -239,7 +239,7 @@ class SJMotionOrientationManager: NSObject{
     // Simulator support
     #if arch(i386) || arch(x86_64)
     func prepareForSimulator(){
-        print("SJMotionOrientationManager - Simulator in use. Using UIDevice instead")
+        print("YZMotionOrientationManager - Simulator in use. Using UIDevice instead")
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationChanged(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)

@@ -26,13 +26,13 @@ class ViewController: UIViewController {
     deinit{
        UIDevice.current.endGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.removeObserver(self)
-        SJMotionOrientationManager.shared.stopAccelerometerUpdates()
+        YZMotionOrientationManager.shared.stopAccelerometerUpdates()
     }
     
     func prepareUI(){
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationChanged), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-         SJMotionOrientationManager.shared.startAccelerometerUpdates(deviceBlock: { [weak self ] (orientation) in
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
+         YZMotionOrientationManager.shared.startAccelerometerUpdates(deviceBlock: { [weak self ] (orientation) in
             self?.prepareMotionOrientation( orientation)
         })
     }
